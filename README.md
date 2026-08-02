@@ -1,0 +1,1 @@
+This is a simple console project , it's rock paper scissors game 
