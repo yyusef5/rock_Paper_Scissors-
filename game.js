@@ -1,3 +1,4 @@
+let humanScore = 0 , computerScore = 0;
 function getComputerChoice()
 {
     const choice = (Math.random() * 2).toFixed(0) ;
@@ -30,4 +31,47 @@ function PlayRound(ComputerChoice , HumanChoice)
     return 'computer';
 }
 
+function determineTheWinner(Result)
+{
+    if(Result === 'human')
+        humanScore++;
+    else if(Result === 'computer')
+        computerScore++;
+}
 
+function playGame()
+{
+    let round = 1;
+
+    console.log("round " + round + "............./n");   
+    determineTheWinner(PlayRound(getComputerChoice() , getHumanChoice()));
+    round++;
+
+    console.log("round " + round + "............./n");   
+    determineTheWinner(PlayRound(getComputerChoice() , getHumanChoice()));
+    round++;
+
+    console.log("round " + round + "............./n");   
+    determineTheWinner(PlayRound(getComputerChoice() , getHumanChoice()));
+    round++;
+
+    console.log("round " + round + "............./n");   
+    determineTheWinner(PlayRound(getComputerChoice() , getHumanChoice()));
+    round++;
+
+    console.log("round " + round + "............./n");   
+    determineTheWinner(PlayRound(getComputerChoice() , getHumanChoice()));
+    round++;
+
+    if(humanScore > computerScore)
+        console.log("You Win");
+    else if(computerScore > humanScore)
+        console.log("You Lose");
+    else
+        console.log("Tie");
+
+
+    
+}
+
+playGame();
